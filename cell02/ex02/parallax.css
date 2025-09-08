@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.black {
+  background-color: black;
+}
+
+.sec1 {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/filesuwizx.appspot.com/o/IMG_0221.jpeg?alt=media&token=a3262b4c-27e3-42bf-86e3-070c4d0019ed");
+}
+
+.sec3 {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/filesuwizx.appspot.com/o/IMG_4524.jpeg?alt=media&token=ef1f9178-8e76-40fa-9728-c23f52403c83");
+}
+
+h1 {
+  color: white;
+}
