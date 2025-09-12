@@ -1,41 +1,51 @@
-name: Deploy static content to Pages
+name: Deploy Static HTML to GitHub Pages
 
+# กำหนดเงื่อนไขการ trigger
 on:
+  # ทำงานเมื่อมี push ไป main branch
   push:
     branches: ["main"]
+  
+  # อนุญาตให้รันแบบ manual
   workflow_dispatch:
 
+# ตั้งค่า permissions สำหรับ GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# อนุญาตให้มี concurrent deployment หนึ่งตัวเท่านั้น
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './rush/.'  # ใช้ . เพื่อคัดลอกเฉพาะเนื้อหาในโฟลเดอร์
-
+  # Job สำหรับ build และ deploy
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    
     runs-on: ubuntu-latest
-    needs: build
+    
     steps:
+      # 1. Checkout source code
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Setup Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      # 3. Upload artifact (ใส่ไฟล์ที่จะ deploy)
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Path ของ folder ที่มี HTML files
+          path: './rush'
+
+      # 4. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
