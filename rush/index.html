@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/output.css">
+  <title>websites-that-win-the-contest.sh</title>
+</head>
+
+<style>
+  *{
+    scroll-behavior: smooth;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .fade-in {
+    margin-bottom: 1rem;
+  }
+</style>
+
+<body class="bg-zinc-50 text-zinc-900 flex items-center flex-col h-screen font-geist">
+  <div class="border border-zinc-300 max-w-3xl flex flex-col w-full h-full">
+    <div class="px-6 flex justify-between items-center min-h-16 border-b border-zinc-300 shrink-0">
+      <p class="flex-1"><span class="animate-pulse text-green-500">Running...</span> websites-that-win-the-contest.sh</p>
+      <div>
+        <a href="https://www.it.kmitl.ac.th"
+          class="bg-white p-1 border-zinc-300 border text-sm rounded-lg hover:shadow uppercase px-2 font-geist-mono flex items-center gap-1">
+          <img src="/images/icons/house.svg" class="scale-75" alt="">
+          <span class="hidden sm:block">
+            it@kmitl
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="flex-1 flex flex-col overflow-auto">
+      <div class="flex-1 flex flex-col">
+        <div id="command" class="flex-1 p-4">
+          <p>You are running <span class="font-bold">websites-that-win-the-contest.sh</span></p>
+          <p>Version: 1.0.0</p>
+          <p>Author: suwiprom , pkunjina</p>
+          <p class="pb-10">License: MIT</p>
+          <p class="font-bold">Website List :</p>
+          <ul class="list-disc list-inside pb-10">
+            <li>suwiprom</li>
+            <li>pkunjina</li>
+          </ul>
+          <p>type ./&lt;sitename&gt; to continue</p>
+        </div>
+        <div class="flex items-center">
+          <input
+          id="input"
+          type="text" 
+          placeholder="Type &lt;sitename&gt; to continue." 
+          class="border border-zinc-300 h-9 px-2 flex-1 outline-none">
+          <button
+          id="run"
+          class="p-1 text-sm text-white bg-black hover:shadow uppercase px-2 h-9 font-geist-mono flex items-center gap-1">
+            execute
+          </button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class=" h-9 flex items-center border-y border-zinc-300 justify-center ">
+        <div class="text-xs text-zinc-500 font-geist-mono">Made With ❤️ by suwizx (っ- ‸ - ς)</div>
+      </div>
+      <div class="h-3 bg-pattern"></div>
+    </div>
+  </div>
+</body>
+
+<script>
+  const command = document.getElementById('command');
+  const input = document.getElementById('input');
+  const run = document.getElementById('run');
+  let isTyping = false;
+
+  async function showParagraphs(element, paragraphs, delay = 300) {
+    isTyping = true;
+    element.innerHTML = '';
+    
+    for (const paragraph of paragraphs) {
+      const p = document.createElement('div');
+      p.className = 'fade-in';
+      p.style.opacity = '0';
+      p.style.animation = 'fadeIn 0.5s forwards';
+      p.innerHTML = paragraph;
+      element.appendChild(p);
+      
+      await new Promise(resolve => setTimeout(resolve, delay));
+    }
+    
+    isTyping = false;
+  }
+
+  async function initTyping() {
+    const paragraphs = [
+      `You are running <span class="font-bold">websites-that-win-the-contest.sh</span>`,
+      `Version: 1.0.0`,
+      `Author: suwiprom , pkunjina`,
+      `License: MIT`,
+      `<span class="font-bold">Website List :</span>`,
+      `<ul class="list-disc list-inside pb-10">
+        <li>suwiprom</li>
+        <li>pkunjina</li>
+      </ul>`,
+      `type ./&lt;sitename&gt; to continue`
+    ];
+    
+    await showParagraphs(command, paragraphs);
+  }
+
+  document.addEventListener('DOMContentLoaded', initTyping);
+
+  run.addEventListener('click', async () => {
+    if (isTyping) return;
+    
+    const commandText = input.value.trim();
+    if (!commandText) return;
+    
+    const commandLine = document.createElement('div');
+    commandLine.className = 'command-line';
+    command.appendChild(commandLine);
+    
+    commandLine.innerHTML += `<span class="text-green-500">$</span> ${commandText}`;
+    commandLine.innerHTML += `<br>`;
+    
+    input.value = '';
+    
+    if(commandText === './suwiprom'){
+      commandLine.innerHTML += `processing... to continue to suwiprom`;
+      setTimeout(() => {
+        window.location.href = '/suwiprom';
+      }, 1000);
+    }
+    else if(commandText === './pkunjina'){
+      commandLine.innerHTML += `processing... to continue to pkunjina`;
+      setTimeout(() => {
+        window.location.href = '/pkunjina';
+      }, 1000);
+    }
+    else{
+      commandLine.innerHTML += `command not found`;
+      commandLine.innerHTML += `<br>`;
+    }
+
+    command.scrollTop = command.scrollHeight;
+  });
+
+  input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      run.click();
+    }
+  });
+</script>
+
+</html>

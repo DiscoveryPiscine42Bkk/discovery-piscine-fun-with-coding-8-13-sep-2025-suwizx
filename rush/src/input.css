@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'geist';
+  src: url('../fonts/geist/Geist-Regular.woff2') format('woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'geist';
+  src: url('../fonts/geist/Geist-Bold.woff2') format('woff2');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'geist';
+  src: url('../fonts/geist/Geist-Light.woff2') format('woff2');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'geist-mono';
+  src: url('../fonts//geist-mono/GeistMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'geist-mono';
+  src: url('../fonts//geist-mono/GeistMono-Bold.woff2') format('woff2');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'geist-mono';
+  src: url('../fonts/geist-mono//GeistMono-Thin.woff2') format('woff2');
+  font-weight: 100;
+}
+
+@theme {
+  --font-geist : 'geist', sans-serif;
+  --font-geist-mono : 'geist-mono', monospace;
+  --background-image-pattern: repeating-linear-gradient(315deg, oklch(87.1% 0.006 286.286) 0, oklch(87.1% 0.006 286.286) 1px, transparent 1px, transparent 10px);
+}
