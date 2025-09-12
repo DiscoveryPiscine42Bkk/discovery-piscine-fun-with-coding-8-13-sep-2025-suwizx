@@ -5,18 +5,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/src/output.css">
-  <title>Document</title>
+  <title>suwiprom</title>
 </head>
+
+<style>
+  *{
+    scroll-behavior: smooth;
+  }
+</style>
 
 <body class="bg-zinc-50 text-zinc-900 flex flex-col max-h-dvh h-full items-center font-geist">
   <div class="border border-zinc-300 max-w-3xl flex flex-col min-h-dvh w-full">
-    <div class="px-6 flex justify-between items-center h-16 border-b border-zinc-300">
-      <a href="/" class="font-bold uppercase text-2xl text-zinc-900 hover:opacity-70">suwiprom</a>
+    <div class="px-6 flex justify-between items-center min-h-16 border-b border-zinc-300">
+      <a href="/" class="hidden sm:block font-bold uppercase text-2xl text-zinc-900 hover:opacity-70">suwiprom</a>
+      <div class="flex gap-4 font-geist-mono underline">
+        <a href="#about" class="hover:opacity-70">about</a>
+        <a href="#experience" class="hover:opacity-70">experience</a>
+        <a href="#contact" class="hover:opacity-70">contact</a>
+      </div>
       <div>
-        <a href=""
+        <a href="/"
           class="bg-white p-1 border-zinc-300 border text-sm rounded-lg hover:shadow uppercase px-2 font-geist-mono flex items-center gap-1">
           <img src="/images/icons/house.svg" class="scale-75" alt="">
-          back to list
+          <span class="hidden sm:block">
+            back to list
+          </span>
         </a>
       </div>
     </div>
@@ -24,12 +37,12 @@
       <div>
         <div class="h-10 bg-pattern border-b border-zinc-300">
         </div>
-        <div class="flex border-b border-zinc-300">
+        <div class="flex sm:flex-row flex-col border-b border-zinc-300">
           <div class=" px-2 border-r border-zinc-300 bg-pattern"></div>
           <div class="w-40 aspect-[4/5] border-r border-zinc-300">
-            <img class="aspect-[4/5] w-full h-full object-cover" src="https://firebasestorage.googleapis.com/v0/b/filesuwizx.appspot.com/o/profile.jpg?alt=media&token=f81cbbe5-1022-44ad-bffe-6f8c47300e47" alt="">
+            <img class="aspect-[4/5] w-full h-full object-cover ml-4 sm:ml-0 border-x border-zinc-300 sm:border-none" src="https://firebasestorage.googleapis.com/v0/b/filesuwizx.appspot.com/o/profile.jpg?alt=media&token=f81cbbe5-1022-44ad-bffe-6f8c47300e47" alt="">
           </div>
-          <div class=" px-4 border-r border-zinc-300 bg-pattern"></div>
+          <div class=" px-2 border-r border-zinc-300 bg-pattern"></div>
           <div class="flex-1 flex flex-col justify-end border-r border-zinc-300">
             <p class="text-zinc-700 font-geist-mono border-t border-zinc-300 px-4">@suwizx</p>
             <h1 class="text-4xl uppercase font-bold font-geist border-y border-zinc-300 h-fit w-full px-4">
@@ -43,7 +56,7 @@
         </div>
         <div class="h-10 bg-pattern border-b border-zinc-300">
         </div>
-        <div class="text-zinc-900">
+        <div id="about" class="text-zinc-900">
           <h2 class="text-2xl font-bold uppercase border-b border-zinc-300 px-4 py-2">
             About Me
           </h2>
@@ -63,11 +76,12 @@
             Additionally, my friends and I founded a technology club called "Creasy Club," inspired by Creatorsgarten, with the goal
             of sharing knowledge and experiences with others. We have organized several tech conferences and plan to host many more
             activities in the future.
+          </p>
         </div>
         <div class="h-10 bg-pattern border-t border-zinc-300">
         </div>
       </div>
-      <div class="border-t border-zinc-300">
+      <div id="skills" class="border-t border-zinc-300">
         <h2 class="text-2xl font-bold uppercase border-b border-zinc-300 px-4 py-2">
           Technical Skills
         </h2>
@@ -103,7 +117,7 @@
                   Hono
                 </li>
                 <li class="p-2 h-fit px-2 py-1 flex items-center gap-1 border border-zinc-300 bg-white rounded-lg">
-                  <img src="/images/icons/react.svg" class="h-4" alt="ElysiaJS Icon">
+                  <img src="/images/icons/elysia.svg" class="h-4" alt="ElysiaJS Icon">
                   ElysiaJS
                 </li>
                 <li class="p-2 h-fit px-2 py-1 flex items-center gap-1 border border-zinc-300 bg-white rounded-lg">
@@ -123,7 +137,7 @@
                   React Hook Form
                 </li>
                 <li class="p-2 h-fit px-2 py-1 flex items-center gap-1 border border-zinc-300 bg-white rounded-lg">
-                  <img src="/images/icons/react.svg" class="h-4" alt="Motion Icon">
+                  <img src="/images/icons/motion.svg" class="h-4 max-w-6" alt="Motion Icon">
                   Motion
                 </li>
                 <li class="p-2 h-fit px-2 py-1 flex items-center gap-1 border border-zinc-300 bg-white rounded-lg">
@@ -225,10 +239,70 @@
           </div>
         </div>
       </div>
+      <div class="h-10 bg-pattern border-b border-zinc-300"></div>
+      <div id="experience">
+        <div>
+          <h2 class="text-2xl font-bold uppercase border-b border-zinc-300 px-4 py-2">Experiences</h2>
+        </div>
+        <div class="flex flex-col items-stretch sm:flex-row border-b border-zinc-300">
+          <div class="w-10 border-r border-zinc-300 bg-pattern">
+          </div>
+          <div class="flex-1 h-full">
+            <img src="/images/projects/itgg.png" class="aspect-[5/3] w-full h-full object-cover border-b border-zinc-300" alt="ITGG">
+            <div class="p-4">
+              <h3 class="font-bold text-xl mb-2">Infortech Gategame 2024</h3>
+              <p class="font-geist-mono">ITGG 2024 Landing Page to inform score ranking and game schedule with GSAP animation.</p>
+            </div>
+          </div>
+          <div class="sm:hidden w-full h-4 border-y border-zinc-300 bg-pattern">
+          </div>
+          <div class="hidden sm:block w-10 border-x border-zinc-300 bg-pattern">
+          </div>
+          <div class="flex-1 h-full">
+            <img src="/images/projects/prepro68.png" class="aspect-[5/3] w-full h-full object-cover border-b border-zinc-300" alt="Prepro68">
+            <div class="p-4">
+              <h3 class="font-bold text-xl mb-2">Pre-Programming 68</h3>
+              <p class="font-geist-mono">Landing Page , Registration , Learning System with Dashboard in Pre-Programming 68</p>
+            </div>
+          </div>
+          <div class="w-10 border-x border-zinc-300 bg-pattern">
+          </div>
+        </div>
+        <div class="h-10 bg-pattern border-b border-zinc-300"></div>
+      </div>
+      <div id="contact">
+        <div>
+          <h2 class="text-2xl font-bold uppercase border-b border-zinc-300 px-4 py-2">Contact</h2>
+          <div class="p-4">
+            <ul class="flex flex-col gap-4">
+              <a href="mailto:suwijak.pak@gmail.com">
+                <li class="flex items-center gap-2 underline hover:opacity-70 font-geist-mono">
+                  <img src="/images/icons/mail.svg" class="h-7 aspect-square bg-white border border-zinc-300 p-1 rounded-lg" alt="">
+                  <p>suwijak.pak@gmail.com</p>
+                </li>
+              </a>
+              <li class="flex items-center gap-2 font-geist-mono">
+                <img src="/images/icons/map-pin.svg" class="h-7 aspect-square bg-white border border-zinc-300 p-1 rounded-lg" alt="">
+                <p>School of Information Technology, KMITL</p>
+              </li>
+              <li class="flex items-center gap-2 font-geist-mono">
+                <img src="/images/icons/phone.svg" class="h-7 aspect-square bg-white border border-zinc-300 p-1 rounded-lg" alt="">
+                <p>+66(0) 92 459 6451</p>
+              </li>
+              <a href="https://suwizx.dev" target="_blank">
+                <li class="flex items-center gap-2 font-geist-mono underline hover:opacity-70">
+                  <img src="/images/icons/app-window-mac.svg" class="h-7 aspect-square bg-white border border-zinc-300 p-1 rounded-lg" alt="">
+                  <p>suwizx.dev</p>
+                </li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
     <div>
       <div class=" h-9 flex items-center border-y border-zinc-300 justify-center ">
-        <div class="text-xs text-zinc-500 font-geist-mono">Made With ❤️ by suwizx</div>
+        <div class="text-xs text-zinc-500 font-geist-mono">Made With ❤️ by suwizx (っ- ‸ - ς)</div>
       </div>
       <div class="h-3 bg-pattern"></div>
     </div>
