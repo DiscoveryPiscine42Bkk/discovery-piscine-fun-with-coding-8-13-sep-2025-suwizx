@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-inprogress: true
+  cancel-in-progress: true  # Fixed the key name here
 
 jobs:
   build:
@@ -27,7 +27,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: './rush'  # Changed to point to the rush directory
+          path: './rush'
 
   deploy:
     environment:
