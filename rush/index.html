@@ -135,13 +135,13 @@
     if(commandText === './suwiprom'){
       commandLine.innerHTML += `processing... to continue to suwiprom`;
       setTimeout(() => {
-        window.location.href = './suwiprom';
+        window.location.href = `${window.location.origin}/suwiprom`;
       }, 1000);
     }
     else if(commandText === './pkunjina'){
       commandLine.innerHTML += `processing... to continue to pkunjina`;
       setTimeout(() => {
-        window.location.href = './pkunjina';
+        window.location.href = `${window.location.origin}/pkunjina`;
       }, 1000);
     }
     else{
