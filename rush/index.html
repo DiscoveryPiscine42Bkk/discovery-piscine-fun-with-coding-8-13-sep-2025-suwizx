@@ -81,6 +81,7 @@
   let isTyping = false;
 
   async function showParagraphs(element, paragraphs, delay = 300) {
+    
     isTyping = true;
     element.innerHTML = '';
     
@@ -135,13 +136,13 @@
     if(commandText === './suwiprom'){
       commandLine.innerHTML += `processing... to continue to suwiprom`;
       setTimeout(() => {
-        window.location.href = `${window.location.pathname}/suwiprom`;
+        window.location.href = `${window.location.origin}${window.location.pathname}/suwiprom`;
       }, 1000);
     }
     else if(commandText === './pkunjina'){
       commandLine.innerHTML += `processing... to continue to pkunjina`;
       setTimeout(() => {
-        window.location.href = `${window.location.pathname}/pkunjina`;
+        window.location.href = `${window.location.origin}${window.location.pathname}/pkunjina`;
       }, 1000);
     }
     else{
