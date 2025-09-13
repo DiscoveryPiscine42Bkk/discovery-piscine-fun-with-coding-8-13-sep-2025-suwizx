@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="src/output.css">
+  <link rel="stylesheet" href="./src/output.css">
   <title>websites-that-win-the-contest.sh</title>
 </head>
 
@@ -30,7 +30,7 @@
       <div>
         <a href="https://www.it.kmitl.ac.th"
           class="bg-white p-1 border-zinc-300 border text-sm rounded-lg hover:shadow uppercase px-2 font-geist-mono flex items-center gap-1">
-          <img src="/images/icons/house.svg" class="scale-75" alt="">
+          <img src="./images/icons/house.svg" class="scale-75" alt="">
           <span class="hidden sm:block">
             it@kmitl
           </span>
@@ -136,13 +136,13 @@
     if(commandText === './suwiprom'){
       commandLine.innerHTML += `processing... to continue to suwiprom`;
       setTimeout(() => {
-        window.location.href = `${window.location.origin}${window.location.pathname}/suwiprom`;
+        window.location.href = `./suwiprom`;
       }, 1000);
     }
     else if(commandText === './pkunjina'){
       commandLine.innerHTML += `processing... to continue to pkunjina`;
       setTimeout(() => {
-        window.location.href = `${window.location.origin}${window.location.pathname}/pkunjina`;
+        window.location.href = `./pkunjina`;
       }, 1000);
     }
     else{
